@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="89" width="414" height="773"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieTableViewcell" rowHeight="150" id="ILM-fq-BUo">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieTableViewcell" rowHeight="150" id="ILM-fq-BUo" customClass="MovieTableViewcellTableViewCell" customModule="Demo_fetchData" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ILM-fq-BUo" id="l8g-4l-gbr">
@@ -95,6 +95,13 @@
                                             <constraint firstItem="Cfq-ow-Mfq" firstAttribute="width" secondItem="ILM-fq-BUo" secondAttribute="width" multiplier="0.3" id="wrV-MG-ncZ"/>
                                             <constraint firstItem="Cfq-ow-Mfq" firstAttribute="height" secondItem="ILM-fq-BUo" secondAttribute="height" multiplier="0.85" id="xXm-5Z-4ft"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="movieOverViewLabel" destination="8Zy-DY-n7q" id="ynJ-uu-txm"/>
+                                            <outlet property="moviePoster" destination="Cfq-ow-Mfq" id="FtY-yw-DTA"/>
+                                            <outlet property="movieRatingLabel" destination="EZY-V5-ZHb" id="qsB-fD-fdS"/>
+                                            <outlet property="movieTitleLabel" destination="yia-K6-eFr" id="cDb-IG-EFk"/>
+                                            <outlet property="movieYearLabel" destination="kVc-L9-VfC" id="bCi-YG-nDW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
