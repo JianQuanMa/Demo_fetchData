@@ -29,4 +29,5 @@ class MovieViewModel{
         return popularMovies[indexPath.row]
     }
     
+    
 }

@@ -15,6 +15,7 @@ class MovieViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loadMoviesData()
+        
     }
     
     private func loadMoviesData(){

@@ -8,7 +8,7 @@
 import UIKit
 
 class MovieTableViewcell: UITableViewCell {
-    
+
     @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieYearLabel: UILabel!
@@ -19,28 +19,27 @@ class MovieTableViewcell: UITableViewCell {
     
     //setup Mivie values
     func setCells(withValuesOf movie: Movie){
-        updateUI(title: movie.title, releaseDate: movie.year, rating: movie.rate, overView: movie.overview, poster: movie.posterImage)
+        updateUI(title: movie.title, releaseDate: movie.year, rating: movie.rate, overView: movie.overview, posterString: movie.posterImage)
     }
     
     //update ui changes
-    private func updateUI(title: String?, releaseDate: String?, rating: Double?, overView: String?, poster: String?){
+    private func updateUI(title: String?, releaseDate: String?, rating: Double?, overView: String?, posterString: String?){
         self.movieTitleLabel.text = title
         self.movieYearLabel.text = convertDateFormatter(releaseDate)
         self.movieOverViewLabel.text = overView
-        guard let rating = rating else {return}
+        guard let rating = rating else{return}
         self.movieRatingLabel.text = "\(rating)"
         
-        guard let posterString = poster else {return}
-        urlString = "https://image.tmdb.org/t/p/w300" + posterString
+        guard let posterString = posterString else {return}
+        urlString = "http://image.tmdb.org/t/p/w300\(posterString)"
         guard let posterImageURL = URL(string: urlString) else {
-            self.moviePoster.image = UIImage(named: "noImageAvailable")
+            self.imageView?.image = UIImage(named: "NoImageAvailable")
             return
         }
         //nil the old one before downloading the new one
         self.moviePoster.image = nil
         
         getImageDataFrom(url: posterImageURL)
-        print(posterImageURL)
         
     }
     
@@ -74,5 +73,5 @@ class MovieTableViewcell: UITableViewCell {
     }
     
     
-    
+
 }

@@ -22,10 +22,10 @@ struct Movie: Decodable{
     let posterImage: String?
     let overview: String?
     
-    private enum Codingkeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case title, overview
-        case year = "release_data"
-        case rate = "vote_averge"
+        case year = "release_date"
+        case rate = "vote_average"
         case posterImage = "poster_path"
     }
 }

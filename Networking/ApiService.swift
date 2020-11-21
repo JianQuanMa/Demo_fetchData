@@ -32,6 +32,7 @@ class ApiService {
                 print("empty data")
                 return
             }
+            print("data: \(data)")
             do {
                 let decoder = JSONDecoder()
                 let jsonData = try decoder.decode(MoviesData.self, from: data)
